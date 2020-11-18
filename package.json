@@ -14,7 +14,8 @@
   },
   "scripts": {
     "dev": "parcel src/index.html",
-    "build": "npm run build-ts && npm run build-worker",
+    "build": "npm run build-ts && npm run build-worker && npm run build-site",
+    "build-site": "parcel build src/index.html",
     "build-ts": "parcel build node_modules/monaco-editor/esm/vs/language/typescript/ts.worker.js",
     "build-worker": "parcel build node_modules/monaco-editor/esm/vs/editor/editor.worker.js"
   },
