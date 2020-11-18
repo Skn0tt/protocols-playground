@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Protocols Playground</title>
+
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="main">
+      <section class="editor-container">
+        <div
+          id="editor-container"
+        ></div>
+      </section>
+
+      <section class="control-surface">
+        <label>
+          Channel
+
+          <input
+            class="nes-input"
+            id="channel-input"
+            type="number"
+            value="1"
+            min="0"
+            max="32"
+          />
+        </label>
+
+        <div>
+          <button onclick="buttons.onPressA()">A</button>
+          <button onclick="buttons.onPressB()">B</button>
+          <button onclick="buttons.onPressC()">C</button>
+          <button onclick="buttons.onPressD()">D</button>
+        </div>
+
+        <form id="input-form">
+          <label>
+            Text Input
+            <input name="value" type="text" />
+          </label>
+        </form>
+
+        <div class="out-log-container">
+          <h2>Output Log</h2>
+          <code id="out-log"></code>
+        </div>
+      </section>
+    </div>
+
+    <script src="./index.ts"></script>
+  </body>
+</html>

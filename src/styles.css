@@ -1,0 +1,37 @@
+html, body {
+  margin: 0;
+  overflow-y: hidden;
+
+  font-family: sans-serif;
+}
+
+.main {
+  height: 100vh;
+
+  display: flex;
+}
+
+.editor-container {
+  height: 100%;
+  flex: 6;
+}
+
+#editor-container {
+  height: 100%;
+}
+
+.out-log-container {
+  border-radius: 10px;
+  border: 1px solid lightgray;
+  padding: 10px;
+}
+
+.out-log-container > h2 {
+  margin: 0px;
+}
+
+.control-surface {
+  margin: 10px;
+
+  flex: 4;
+}
