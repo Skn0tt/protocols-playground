@@ -2,7 +2,7 @@ import Pusher, { Channel } from "pusher-js";
 
 let channel = undefined;
 
-const pusher = new Pusher(process.env.PUSHER_APP_ID, {
+const pusher = new Pusher(process.env.PUSHER_KEY, {
   cluster: process.env.PUSHER_CLUSTER,
   authEndpoint: "/api/pusher-auth"
 });
