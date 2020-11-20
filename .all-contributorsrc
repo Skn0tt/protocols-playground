@@ -1,0 +1,25 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "SilvanVerhoeven",
+      "name": "SilvanVerhoeven",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/44174681?v=4",
+      "profile": "https://github.com/SilvanVerhoeven",
+      "contributions": [
+        "code",
+        "design"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "protocols-playground",
+  "projectOwner": "Skn0tt",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
