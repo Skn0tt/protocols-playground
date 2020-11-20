@@ -5,9 +5,21 @@ html, body {
   font-family: sans-serif;
 }
 
+h4 {
+  margin-top: 1rem;
+}
+
+.btn-wrapper {
+  display: flex;
+  gap: .2rem;
+}
+
+.input-group {
+  margin-top: .5rem;
+}
+
 .main {
   height: 100vh;
-
   display: flex;
 }
 
@@ -21,17 +33,27 @@ html, body {
 }
 
 .out-log-container {
-  border-radius: 10px;
+  border-radius: .25rem;
   border: 1px solid lightgray;
   padding: 10px;
+  flex: 1 1;
+
+  overflow-y: scroll;
 }
 
-.out-log-container > h2 {
-  margin: 0px;
+#out-log {
+  overflow-wrap: break-word;
+}
+
+#out-log .log-time {
+  color: gray;
+  margin-right: .5rem;
 }
 
 .control-surface {
   margin: 10px;
 
   flex: 4;
+  display: flex;
+  flex-direction: column;
 }
