@@ -2,8 +2,39 @@ import * as WalkieTalkie from "./walkie-talkie";
 
 const outlog = document.getElementById("out-log") as HTMLParagraphElement;
 
+function selectionWrapper(content: string, cls?: string, title?: string): string {
+  // wraps given content with a paragraph to limit selection by a user's double click to this content
+  return '<p style="display: inline-block; margin: 0"' +
+    (title ? ' title="' + title + '"' : "") + 
+    (cls ? ' class="' + cls + '"' : "") +'>' + content + '</p>';
+}
+
+function getHmString(date: Date): string {
+    var localeSpecificTime = date.toLocaleTimeString();
+    return date.toLocaleTimeString(navigator.language, {
+      hour: '2-digit',
+      minute:'2-digit'
+    });
+}
+
+function getHmsString(date: Date): string {
+    var localeSpecificTime = date.toLocaleTimeString();
+    return date.toLocaleTimeString(navigator.language, {
+      hour: '2-digit',
+      minute:'2-digit',
+      second:'2-digit'
+    });
+}
+
+function getLogTimeString(date: Date): string {
+  return selectionWrapper(getHmString(date), "log-time", getHmsString(date));
+}
+
 export function writeToOutlog(msg: string) {
-  outlog.innerText += msg + "\n";
+  if (outlog.innerHTML !== "") outlog.innerHTML = "<br>" + outlog.innerHTML;
+  outlog.innerHTML = 
+    getLogTimeString(new Date()) + ' ' + 
+    selectionWrapper(msg) + outlog.innerHTML;
 }
 
 export function overrideToOutlog(lineIndex: number, msg: string) {
