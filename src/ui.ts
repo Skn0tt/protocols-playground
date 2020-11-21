@@ -4,7 +4,7 @@ const outlog = document.getElementById("out-log") as HTMLParagraphElement;
 
 function selectionWrapper(content: string, cls?: string, title?: string): string {
   // wraps given content with a paragraph to limit selection by a user's double click to this content
-  return '<p style="display: inline-block; margin: 0"' +
+  return '<p ' +
     (title ? ' title="' + title + '"' : "") + 
     (cls ? ' class="' + cls + '"' : "") +'>' + content + '</p>';
 }
@@ -38,11 +38,18 @@ export function writeToOutlog(msg: string) {
 }
 
 export function overrideToOutlog(lineIndex: number, msg: string) {
-  const lines = outlog.innerText.split("\n")
+  const lines = outlog.innerHTML.split("<br>");
 
-  lines[lineIndex] = msg;
+  let [timestamp, prev_msg, lastChange = ""] = lines[lineIndex].split("</p>");
+  timestamp += "</p>";
 
-  outlog.innerText = lines.join("\n")
+  // update last change
+  lastChange = selectionWrapper(`(last change: ${getHmString(new Date())})`, 'log-time last-change', getHmsString(new Date()));
+
+  // update line
+  lines[lineIndex] = timestamp + ' ' + msg + ' ' + lastChange;
+
+  outlog.innerHTML = lines.join("<br>");
 }
 
 const channelInput = document.getElementById(
