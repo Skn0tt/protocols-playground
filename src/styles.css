@@ -47,7 +47,6 @@ h4 {
 
 #out-log .log-time {
   color: gray;
-  margin-right: .5rem;
 }
 
 .control-surface {
@@ -56,4 +55,14 @@ h4 {
   flex: 4;
   display: flex;
   flex-direction: column;
+}
+
+#out-log .last-change {
+  font-style: italic;
+  font-size: 0.7rem;
+}
+
+#out-log p {
+  display: inline-block;
+  margin: 0;
 }
